@@ -1,0 +1,25 @@
+
+<div class="block-left">ВРЕМЯ ДОСТАВКИ *</div>
+<div class="block-right">
+    <div class="inpur-block">
+        <select class="form-control valid" name="delievery-date-input" id="delievery-date-input" aria-invalid="false">
+            <option value=""  disabled="">-- Выберите дату доставки --</option>
+            {{#schedule}}
+            <option {{#selected}}selected{{/selected}} value="{{index}}">{{date}}</option>
+            {{/schedule}}
+        </select>
+        <label id="delievery-date-input-error" class="wbl-input-error" for="delievery-date-input" style="display: none;"></label>
+    </div>
+    <div class="inpur-block">
+        <select class="form-control valid" name="delievery-time-input" id="delievery-time-input">
+            {{#schedule}}
+                {{#selected}}
+                    {{#intervals}}
+            <option value="{{index}}" {{#selected}}selected{{/selected}}>{{value}}</option>
+                    {{/intervals}}
+                {{/selected}}
+            {{/schedule}}
+        </select>
+        <label id="delievery-time-input-error" class="wbl-input-error" for="delievery-time-input" style="display: none;"></label>
+    </div>
+</div>
